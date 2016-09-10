@@ -8,7 +8,6 @@ public:
 	item() {}
 	item(int visited_, int value_) : visited(visited_), value(value_) {};
 	int isVisited() { return visited; };
-	void init() { visited = 0; value = 0; };
 	int getValue() { return value; };
 };
 
