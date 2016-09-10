@@ -22,7 +22,7 @@ void powerset(int arr[],int n, int max)
 
 int main()
 {
-	int arr[4];
+	int arr[5];
 	int arr_size = sizeof(arr) / sizeof(arr[0]);
 	powerset(arr, 0, arr_size);
 	return 0;
