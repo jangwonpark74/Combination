@@ -10,8 +10,6 @@ struct item {
 	int getValue() { return value; };
 };
 
-item select[10];
-
 int cnt;
 
 void combination(int arr[], int n, int r, int t, item select[])
@@ -44,28 +42,29 @@ void combination(int arr[], int n, int r, int t, item select[])
 
 }
 
+void init(item Arr[])
+{
+	for (int i = 0; i < 10; i++)
+		Arr[i] = item(0, 0);
+}
+
 int main()
 {
 	int arr[] = { 1, 3, 5, 7, 9 };
 
 	int n = sizeof(arr) / sizeof(arr[0]);
+
+	item select[10];
+	init(select);
 	
-	printf("\ninit & print\n");
-
-	for (int i = 0; i < 10; i++)
-		select[i]= item(0, 0);
-
 	for (int k = 1; k <= 5; k++)
 	{
-		
 		cnt = 1;
 		printf(" 5C%d example\n", k);
 		combination(arr, n, k, 0, select);
 		printf("\n\n");
 
-		for (int i = 0; i < 10; i++)
-			select[i] = item(0, 0);
-	
+		init(select);
 	}
 	return 0;
 }
