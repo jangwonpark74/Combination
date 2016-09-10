@@ -1,8 +1,10 @@
 #include <stdio.h>
 
-struct item {
+class item {
+private:
 	int visited;
 	int value;
+public:
 	item() {}
 	item(int visited_, int value_) : visited(visited_), value(value_) {};
 	int isVisited() { return visited; };
