@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int select[5]; 
-int visited[5];
+int select[6]; 
+int visited[6];
 int cnt;
 
 void combination(int arr[], int n, int r, int t)
@@ -9,7 +9,7 @@ void combination(int arr[], int n, int r, int t)
 	if (r == 0)
 	{
 		printf("[%d] ", cnt++);
-		for (int i = 0; i <t; i++)
+		for (int i = 1; i <=t; i++)
 		{
 			if(visited[i] == 1)
 			printf("%d ", select[i]);
@@ -27,8 +27,8 @@ void combination(int arr[], int n, int r, int t)
 	}
 	else
 	{
-		visited[r - 1] = 1;
-		select[r - 1] = arr[t];
+		visited[r] = 1;
+		select[r] = arr[t];
 		combination(arr, n - 1, r - 1, t+1);
 		combination(arr, n - 1, r, t+1);
 	}
