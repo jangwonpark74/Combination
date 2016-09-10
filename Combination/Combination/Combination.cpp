@@ -31,7 +31,6 @@ void combination(int arr[], int n, int r, int t)
 		select[r - 1] = arr[n-1];
 		combination(arr, n - 1, r - 1, t+1);
 		combination(arr, n - 1, r, t+1);
-
 	}
 
 }
