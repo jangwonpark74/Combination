@@ -1,12 +1,8 @@
 #include <stdio.h>
 
-int arr[4];
-int visited[4];
-int arr_size = 4; 
-
-void powerset(int n)
+void powerset(int arr[],int n, int max)
 {
-	if (n == arr_size)
+	if (n == max)
 	{
 		for (int i = 0; i < n; i++)
 		{
@@ -18,14 +14,16 @@ void powerset(int n)
 	{
 		
 		arr[n] = 1;
-		powerset(n + 1);
+		powerset(arr, n + 1, max);
 		arr[n] = 0;
-		powerset(n + 1);
+		powerset(arr, n + 1, max);
 	}
 }
 
 int main()
 {
-	powerset(0);
+	int arr[4];
+	int arr_size = sizeof(arr) / sizeof(arr[0]);
+	powerset(arr, 0, arr_size);
 	return 0;
 }
