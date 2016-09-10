@@ -44,20 +44,21 @@ void combination(int arr[], int n, int r, int t, item select[])
 
 }
 
-void init(item Arr[])
+void init(item Arr[], int size)
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < size; i++)
 		Arr[i] = item(0, 0);
 }
 
 int main()
 {
 	int arr[] = { 1, 3, 5, 7, 9 };
+	item select[10];
 
 	int n = sizeof(arr) / sizeof(arr[0]);
+	int m = sizeof(select) / sizeof(item);
 
-	item select[10];
-	init(select);
+	init(select,m);
 	
 	for (int k = 1; k <= 5; k++)
 	{
@@ -66,7 +67,7 @@ int main()
 		combination(arr, n, k, 0, select);
 		printf("\n\n");
 
-		init(select);
+		init(select,m);
 	}
 	return 0;
 }
