@@ -1,6 +1,6 @@
 #include <iostream>
 
-int arr[] = { 1,2,3,4,5 };
+int arr[] = { 1, 2, 3, 4, 5};
 int arr_size = 0;
 
 void swap(int &a, int &b)
@@ -12,9 +12,9 @@ void swap(int &a, int &b)
 
 void permutate(int s, int e)
 {
-	if (s == e)
+	if (s == e+1)
 	{
-		for (int i = 0; i<arr_size; i++)
+		for (int i = 0; i<s; i++)
 			printf("%d ", arr[i]);
 		printf("\n");
 		return;
@@ -35,9 +35,11 @@ int main()
 {
 	arr_size = sizeof(arr) / sizeof(arr[0]);
 
-	printf("arr_size = %d\n", arr_size);
-
-	permutate(0, arr_size - 1);
-
+	for (int i = 1; i < 5; i++)
+	{
+		printf("permutation from %d to %d\n", 0, i);
+		permutate(0, i);
+		printf("\n\n");
+	}
 	return 0;
 }
